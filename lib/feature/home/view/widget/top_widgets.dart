@@ -23,21 +23,30 @@ class _TopRowWidgets extends StatelessWidget {
               TextConstant.dailyMessage,
               style: context.textTheme.titleSmall,
             ),
-            PopupMenuButton(
-              initialValue: 1,
-              icon: Assets.png.btnOptions.image(),
-              itemBuilder: (BuildContext context) => <PopupMenuEntry>[
-                const PopupMenuItem(
-                  value: 1,
-                  child: Text(' '),
-                ),
-                const PopupMenuItem(
-                  value: 2,
-                  child: Text(' '),
-                ),
-              ],
-            ),
+            const _PopUpMenu(),
           ],
         ));
+  }
+}
+
+class _PopUpMenu extends StatelessWidget {
+  const _PopUpMenu();
+
+  @override
+  Widget build(BuildContext context) {
+    return PopupMenuButton(
+      initialValue: 1,
+      icon: Assets.png.btnOptions.image(),
+      itemBuilder: (BuildContext context) => <PopupMenuEntry>[
+        PopupMenuItem(
+          value: PopUpItems.itemOne.name,
+          child: PopUpItems.itemOne.value,
+        ),
+        PopupMenuItem(
+          value: PopUpItems.itemTwo.name,
+          child: PopUpItems.itemTwo.value,
+        ),
+      ],
+    );
   }
 }

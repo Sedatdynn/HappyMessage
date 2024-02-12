@@ -1,7 +1,7 @@
 import 'package:happy_message_app/index.dart';
 
-Future<void> main() async {
-  await AppInitialize.init();
+void main() {
+  AppInitialize.init();
   runApp(const MyApp());
 }
 
