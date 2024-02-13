@@ -8,17 +8,18 @@ class Button extends StatelessWidget {
   final String text;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 48.h,
-      width: 275.w,
-      decoration: BoxDecoration(
-        color: context.theme.primaryColor,
-        borderRadius: CustomBorderRadius.largeCircular(),
-      ),
-      child: Center(
-        child: Text(
-          text,
-          style: context.textTheme.labelMedium,
+    return Expanded(
+      child: Container(
+        height: 48.h,
+        decoration: BoxDecoration(
+          color: context.theme.primaryColor,
+          borderRadius: CustomBorderRadius.largeCircular(),
+        ),
+        child: Center(
+          child: Text(
+            text,
+            style: context.textTheme.labelMedium,
+          ),
         ),
       ),
     );

@@ -8,9 +8,9 @@ class _BottomRowWidgets extends StatelessWidget {
     return Padding(
       padding: AppPadding.leftRight(),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const Button(text: TextConstant.dailyLuckyNumber),
-          SizedBox(width: 12.h),
           Assets.png.btnNewMessage.image()
         ],
       ),

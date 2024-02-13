@@ -20,13 +20,15 @@ class HomeView extends StatelessWidget {
           ),
           child: Column(
             children: [
-              SizedBox(height: 37.h),
-              Padding(
-                padding: AppPadding.largeHorizontal(),
-                child: const _TopRowWidgets(),
+              Expanded(
+                flex: 1,
+                child: Padding(
+                  padding: AppPadding.largeHorizontal(),
+                  child: const _TopRowWidgets(),
+                ),
               ),
-              SizedBox(
-                height: 629.h,
+              Expanded(
+                flex: 5,
                 child: Padding(
                     padding: AppPadding.largeHorizontal(),
                     child: BlocBuilder<HomeBloc, HomeState>(
@@ -40,9 +42,7 @@ class HomeView extends StatelessWidget {
                       },
                     )),
               ),
-              const Spacer(),
-              const _BottomRowWidgets(),
-              SizedBox(height: 34.h)
+              const Expanded(flex: 1, child: _BottomRowWidgets()),
             ],
           ),
         ),

@@ -49,7 +49,6 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
                 child: Assets.png.splash.image(),
               ),
             ),
-            const SizedBox(height: 20),
             FadeTransition(
               opacity: _opacityAnimation,
               child: Text(

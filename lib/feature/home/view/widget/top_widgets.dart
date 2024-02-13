@@ -6,7 +6,6 @@ class _TopRowWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 54.h,
         decoration: BoxDecoration(
           border: Border(
             bottom: BorderSide(
@@ -18,12 +17,17 @@ class _TopRowWidgets extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Assets.png.btnBack.image(),
-            Text(
-              TextConstant.dailyMessage,
-              style: context.textTheme.titleSmall,
+            Expanded(flex: 1, child: Assets.png.btnBack.image()),
+            Expanded(
+              flex: 3,
+              child: Text(
+                TextConstant.dailyMessage,
+                style: context.textTheme.titleSmall,
+                textAlign: TextAlign.center,
+                maxLines: 1,
+              ),
             ),
-            const _PopUpMenu(),
+            const Expanded(flex: 1, child: _PopUpMenu()),
           ],
         ));
   }

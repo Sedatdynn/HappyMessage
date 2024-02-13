@@ -25,36 +25,38 @@ class _MessageBodyWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        width: 216.w,
-                        child: Text(
-                          messages.title.toString(),
-                          style: context.textTheme.headlineLarge,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 12, right: 2),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            messages.title.toString(),
+                            style: context.textTheme.headlineLarge,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
-                      ),
-                      Text(
-                        messages.date.toString(),
-                        style: context.textTheme.bodySmall,
-                      ),
-                    ],
+                        Text(
+                          messages.date.toString(),
+                          style: context.textTheme.bodySmall,
+                        ),
+                      ],
+                    ),
                   ),
-                  SizedBox(height: 12.h),
-                  Text(
-                    messages.message.toString(),
-                    style: context.textTheme.bodyMedium,
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 16.0),
+                    child: Text(
+                      messages.message.toString(),
+                      style: context.textTheme.bodyMedium,
+                    ),
                   ),
-                  SizedBox(height: 16.h),
                   InkWell(
                     onTap: () => context.read<HomeBloc>().add(ChangeLikeEvent(index)),
                     child: Assets.png.btnHeart
                         .image(color: likeList ? context.theme.focusColor : null),
                   ),
-                  SizedBox(height: 16.h),
                   Assets.png.btnSend.image(),
                 ],
               ),
